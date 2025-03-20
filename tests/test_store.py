@@ -1,5 +1,4 @@
 import allure
-import pytest
 import requests
 import jsonschema
 from .schemas.store_schema import STORE_SCHEMA
@@ -73,7 +72,7 @@ class TestStore:
 
 
     @allure.title("Получение инвентаря магазина")
-    def test_get_inventory(self):
+    def test_get_inventory(self, create_store_placed, create_store_approved, create_store_delivered):
         with allure.step("Отправить запрос на получение данных инвентаря"):
             response = requests.get(f'{BASE_URL}/store/inventory')
         with allure.step("Проверка статус кода и тела ответа"):

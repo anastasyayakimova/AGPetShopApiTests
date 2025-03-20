@@ -6,6 +6,9 @@ INVENTORY_SCHEMA = {
         },
         "delivered": {
             "type": "integer"
+        },
+        "placed": {
+            "type": "integer"
         }
     },
     "required": ["approved", "delivered"],
